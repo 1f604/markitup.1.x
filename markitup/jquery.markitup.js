@@ -146,6 +146,9 @@
 				$$.wrap('<div '+nameSpace+'></div>');
 				$$.wrap('<div '+id+' class="markItUp"></div>');
 				$$.wrap('<div class="markItUpContainer"></div>');
+
+				markitup_container = $(".markItUpContainer");
+
 				$$.addClass("markItUpEditor");
 
 				// add the header before the textarea
@@ -511,11 +514,7 @@
 						});
 					} else {
 						iFrame = $('<iframe class="markItUpPreviewFrame"></iframe>');
-						if (options.previewPosition == 'after') {
-							iFrame.insertAfter(footer);
-						} else {
-							iFrame.insertBefore(header);
-						}	
+						iFrame.insertAfter(markitup_container);
 						previewWindow = iFrame[iFrame.length - 1].contentWindow || frame[iFrame.length - 1];
 					}
 				} else if (altKey === true) {
