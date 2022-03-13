@@ -178,7 +178,8 @@
 				}
 
 				// listen key events
-				$$.bind('keydown.markItUp', keyPressed).bind('keyup', keyPressed);
+				// This significantly slows down performance when there is a lot of text in the textbox.
+				// $$.bind('keydown.markItUp', keyPressed).bind('keyup', keyPressed);
 				
 				// bind an event to catch external calls
 				$$.bind("insertion.markItUp", function(e, settings) {
